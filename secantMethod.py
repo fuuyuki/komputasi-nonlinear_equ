@@ -11,7 +11,7 @@ def Secant(pers, x0, x1, eps):
     x_old = x1  # simpan x1 sebagai x_old (xi)
     i = 0
     print("x" + str(i) + " ≈ " + str(x0))  # cetak x0
-    print("x" + str(++i) + " ≈ " + str(x1))  # cetak x1
+    print("x" + str(i + 1) + " ≈ " + str(x1))  # cetak x1
 
     # Lakukan iterasi untuk xi
     while True:
