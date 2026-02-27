@@ -7,10 +7,6 @@ def Secant(pers, x0, x1, eps):
     def f(x):
         return eval(pers, {"x": x, "cos": cos, "sin": sin})
 
-    # Turunan menggunakan numerical approximation
-    def df(x, h=1e-6):
-        return (f(x + h) - f(x - h)) / (2 * h)
-
     x_oldbanget = x0  # simpan x0 sebagai x_oldbanget (xi-1)
     x_old = x1  # simpan x1 sebagai x_old (xi)
     i = 0
