@@ -1,73 +1,101 @@
 # komputasi-nonlinear_equ
 Ini adalah tugas mata kuliah Komputasi Numeris
 
-# Numerical Methods Collection
-
-This repository contains a set of Jupyter Notebooks demonstrating core numerical methods in applied mathematics and computational science. Each notebook focuses on a different theme: solving equations, regression fitting, and interpolation.
+This repository contains Jupyter Notebooks showcasing fundamental numerical methods for solving equations and analyzing data. Each notebook focuses on a specific class of problems and algorithms.
 
 ---
 
 ## 📘 Contents
 
 ### 1. Numerical - Linear Solutions.ipynb
-- **Purpose:** Demonstrates solving systems of linear equations using normal equations and matrix algebra.
-- **Key Topics:**
-  - Construction of normal equations from tabular sums.
-  - Solving for coefficients in linear and polynomial regression models.
-  - Visualization of fitted lines against data points.
-- **Output:** Coefficients of linear models and plots showing the fit.
+- **Purpose:** Solve systems of linear equations using direct and iterative methods.
+- **Implemented Methods:**
+  - **Gauss Elimination:** Forward elimination and back substitution.
+  - **Gauss-Jordan Elimination:** Full elimination to reduced row echelon form.
+  - **Gauss-Seidel Iteration:** Iterative refinement using updated values.
+  - **Jacobi Iteration:** Iterative refinement using old values.
+- **Features:**
+  - Pivoting to avoid division by zero.
+  - Convergence checks for iterative methods.
+  - Example system provided:
+    ```
+    A = [[10, 2, -1], [-3, -6, 2], [1, 1, 5]]
+    b = [27, -61.5, -21.5]
+    ```
+- **Output:** Solution vector `x` for each method, with iteration counts for Gauss-Seidel and Jacobi.
 
 ---
 
 ### 2. Numerical - NonLinear Root Finding.ipynb
-- **Purpose:** Explores methods for finding roots of nonlinear equations.
-- **Key Topics:**
-  - Iterative methods such as Newton–Raphson, Bisection, and Secant.
-  - Convergence behavior and stopping criteria.
-  - Comparison of accuracy and efficiency across methods.
-- **Output:** Step-by-step iterations, convergence tables, and plots of function vs. root approximations.
+- **Purpose:** Find roots of nonlinear equations using iterative methods.
+- **Equation Example:**
+```equation
+f(x) = x - cos(x)
+```
+- **Implemented Methods:**
+- **Bisection Method:** Interval halving until tolerance is met.
+- **Secant Method:** Uses two initial guesses, iterates with secant formula.
+- **Newton-Raphson Method:** Uses derivative (approximated numerically) for fast convergence.
+- **Features:**
+- Interactive input for equation, initial guesses, and tolerance.
+- Iteration logs showing progress toward the root.
+- Numerical derivative approximation for Newton-Raphson.
+- **Output:** Approximate root with iteration count for each method.
 
 ---
 
 ### 3. Numerical - Fitting Regression.ipynb
-- **Purpose:** Fits data to different models (linear, quadratic, cubic polynomial, and custom nonlinear).
-- **Key Topics:**
-  - Building tabular data with powers and cross-terms.
-  - Normal equations for linear, quadratic, and cubic polynomial regression.
-  - Custom nonlinear regression with basis functions: `ln(x)`, `cos(x)`, and `exp(x)`.
-  - Error function evaluation:  
-    
+- **Purpose:** Fit data to different regression models using normal equations.
+- **Models Implemented:**
+- Linear regression.
+- Quadratic regression.
+- Cubic polynomial regression.
+- Custom nonlinear regression:
+  
 
 \[
-    \Phi = \sum (f(x_i) - y_i)^2
-    \]
+  f(x) = a \ln(x) + b \cos(x) + c e^x
+  \]
 
 
-- **Output:** Coefficients for each model, comparison plots, and error values to assess fit quality.
+- **Features:**
+- Tabular expansion with sums for normal equations.
+- Explicit matrix construction and solution using `numpy.linalg.solve`.
+- Error function evaluation:
+  
+
+\[
+  \Phi = \sum (f(x_i) - y_i)^2
+  \]
+
+
+- **Output:** Coefficients for each model, plots comparing fits, and error values.
 
 ---
 
 ### 4. Numerical - Interpolation.ipynb
-- **Purpose:** Performs interpolation of data points using Lagrange and Newton methods.
-- **Key Topics:**
-  - Lagrange interpolation formula.
-  - Newton interpolation with divided differences.
-  - Evaluation of interpolated values across a continuous range.
-  - Comparison of both methods visually and numerically.
-- **Output:** Interpolated curves plotted against original data points, with optional tables comparing values at selected test points.
+- **Purpose:** Interpolate data points using classical polynomial interpolation methods.
+- **Implemented Methods:**
+- **Lagrange Interpolation:** Direct formula using basis polynomials.
+- **Newton Interpolation:** Divided differences and recursive polynomial construction.
+- **Features:**
+- Functions to evaluate interpolation at any point.
+- Continuous evaluation across a range of x-values.
+- Comparison plots of Lagrange and Newton interpolations against original data.
+- **Output:** Interpolated curves and numerical comparisons at selected points.
 
 ---
 
 ## 🚀 How to Use
 1. Open each notebook in Jupyter Lab or Jupyter Notebook.
-2. Run cells sequentially to see calculations, tables, and plots.
-3. Modify the data arrays (`x`, `y`) to experiment with your own datasets.
-4. Compare methods by checking both visual plots and numerical error values.
+2. Run cells sequentially to see calculations, iteration logs, and plots.
+3. Modify input data (`A`, `b`, `x`, `y`, equations) to experiment with your own problems.
+4. Compare methods by checking both numerical results and visual plots.
 
 ---
 
 ## 📊 Applications
-- **Linear Solutions:** Engineering systems, balance equations.
+- **Linear Solutions:** Engineering systems, circuit analysis, balance equations.
 - **NonLinear Root Finding:** Physics problems, optimization, equilibrium analysis.
 - **Fitting Regression:** Data modeling, curve fitting, trend analysis.
 - **Interpolation:** Estimating values between known data points, numerical analysis.
@@ -77,5 +105,6 @@ This repository contains a set of Jupyter Notebooks demonstrating core numerical
 ## 🛠 Requirements
 - Python 3.x
 - NumPy
-- Pandas
 - Matplotlib
+- Pandas (for regression tables)
+
