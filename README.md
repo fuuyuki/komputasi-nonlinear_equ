@@ -8,13 +8,13 @@ This repository contains Jupyter Notebooks showcasing fundamental numerical meth
 ## 📘 Contents
 
 ### 1. Numerical - Linear Solutions.ipynb
-- **Purpose:** Solve systems of linear equations using direct and iterative methods.
-- **Implemented Methods:**
+**Purpose:** Solve systems of linear equations using direct and iterative methods.
+**Implemented Methods:**
   - **Gauss Elimination:** Forward elimination and back substitution.
   - **Gauss-Jordan Elimination:** Full elimination to reduced row echelon form.
   - **Gauss-Seidel Iteration:** Iterative refinement using updated values.
   - **Jacobi Iteration:** Iterative refinement using old values.
-- **Features:**
+**Features:**
   - Pivoting to avoid division by zero.
   - Convergence checks for iterative methods.
   - Example system provided:
@@ -22,7 +22,7 @@ This repository contains Jupyter Notebooks showcasing fundamental numerical meth
     A = [[10, 2, -1], [-3, -6, 2], [1, 1, 5]]
     b = [27, -61.5, -21.5]
     ```
-- **Output:** Solution vector `x` for each method, with iteration counts for Gauss-Seidel and Jacobi.
+**Output:** Solution vector `x` for each method, with iteration counts for Gauss-Seidel and Jacobi.
 
 ---
 
@@ -52,22 +52,18 @@ f(x) = x - cos(x)
 - Cubic polynomial regression.
 - Custom nonlinear regression:
   
-
-\[
+```equation
   f(x) = a \ln(x) + b \cos(x) + c e^x
-  \]
-
+```
 
 - **Features:**
 - Tabular expansion with sums for normal equations.
 - Explicit matrix construction and solution using `numpy.linalg.solve`.
 - Error function evaluation:
   
-
-\[
+```equation
   \Phi = \sum (f(x_i) - y_i)^2
-  \]
-
+```
 
 - **Output:** Coefficients for each model, plots comparing fits, and error values.
 
